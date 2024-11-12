@@ -1,0 +1,14 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: ros2-launch
+# Required-Start:    $all
+# Required-Stop: 
+# Default-Start:     3 
+# Default-Stop:      6 
+# Short-Description: ros2 launch all Robo-Hobo nodes
+### END INIT INFO
+
+cd /home/hobo/Robo-Hobo/ros2_ws
+colcon build
+source ~/.bashrc
+ros2 launch robo_bringup robo.launch.py

@@ -1,0 +1,21 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: ros2-sysinfo
+# Required-Start:    $all
+# Required-Stop: 
+# Default-Start:     3 
+# Default-Stop:      6 
+# Short-Description: send mail of raspi sysinfo
+### END INIT INFO
+
+cd /home/hobo/Robo-Hobo/scripts/
+touch sysinfo.txt
+echo $(date) > sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Load) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Temperature) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Processes) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Disk) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Memory) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=LoggedInUsers) >> sysinfo.txt
+echo &(landscape-sysinfo --sysinfo-plugins=Network) >> sysinfo.txt
+python3 /home/hobo/Robo-Hobo/scripts/initialization_email.py
