@@ -7,18 +7,18 @@ import RPi.GPIO as GPIO
 from std_msgs.msg import String
 
 
-class Siren(Node):                                      # defined class named Motor which inherits Node from rclpy
+class Siren(Node):                                      # defined class which inherits Node from rclpy
     """
     Subscribes to a topic that sends a signal for the siren to make noise and deter intruders.
     """
 
     def __init__(self):                                     # a constructor, required as the first function in every class
-        super().__init__("siren_node")                      # electrocute_node is the name of the node
+        super().__init__("siren_node")                      # siren_node is the name of the node
         self.get_logger().info("siren_node is running")     # way to write a log
 
         # contants
         TIMER_PERIOD = 1.0
-        self.SIREN_PIN = 20     #pin 38
+        self.SIREN_PIN = 20     # pin 38
         self.MAKE_NOISE_SECONDS = 30     # period in seconds to make noise
         self.UNKNOWN_FACE_MAX_LIMIT = 1
 
