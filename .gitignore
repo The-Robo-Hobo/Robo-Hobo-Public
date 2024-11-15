@@ -6,3 +6,5 @@ ros2_ws/log
 *.log
 *.vscode
 scripts/sysinfo.txt
+ros2_ws/src/robo_detection/robo_detection/images
+ros2_ws/src/robo_notification/robo_notification/files/registered_users.txt

@@ -22,6 +22,10 @@ def send_mail():
 
 
     # insert smtp data here: smtp_server, smtp_port, smtp_username, smtp_password
+    smtp_server = 'smtp.example.com'
+    smtp_port = 1234 # sample port
+    smtp_username = 'smtpusername@example.com'
+    smtp_password = 'sample password'       # please secure the credentials
 
 
     email_from = 'emailfrom@example.com'
